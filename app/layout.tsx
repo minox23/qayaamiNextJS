@@ -1,6 +1,7 @@
 import "@styles/globals.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
+import { Provider } from "@components/Provider";
 
 export const metadata = {
   title: "Qayaami",
@@ -15,9 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="app">
-          <Navbar />
-          {children}</main>
+        <Provider>
+          <main className="app">
+            <Navbar />
+            {children}
+          </main>
+        </Provider>
       </body>
     </html>
   );
