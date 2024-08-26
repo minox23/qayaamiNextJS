@@ -1,29 +1,18 @@
 import "@styles/globals.css";
-import Navbar from "@components/Navbar";
-import Footer from "@components/Footer";
-import Provider from "@components/Provider";
 
 export const metadata = {
   title: "Qayaami",
   description: "digital marketing and advertising",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout: React.FC<any> = ({ children }): JSX.Element => {
   return (
     <html lang="en">
       <body>
-        <Provider>
-          <main className="app">
-            <Navbar />
-            {children}
-          </main>
-          <p>hey</p>
-        </Provider>
+        <main className="app">{children}</main>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
