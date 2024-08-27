@@ -3,13 +3,7 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  signIn,
-  signOut,
-  useSession,
-  getProviders,
-  LiteralUnion,
-} from "next-auth/react";
+
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
@@ -19,22 +13,13 @@ const Navbar = () => {
     { name: "Affiliate", href: "#", id: 2 },
   ];
   const accNavigation: { name: string; href: string; id: number }[] = [
-    { name: "Account settings", href: "#", id: 1 },
+    { name: "Account settings", href: "/settings", id: 1 },
     { name: "Profile", href: "#", id: 2 },
     { name: "Support", href: "#", id: 3 },
   ];
   const [providers, setProviders] = useState(null);
   const isUserLoggedIn: boolean = true;
 
-  useEffect(() => {
-    const setProviders = async () => {
-      const response = await getProviders();
-
-      setProviders();
-    };
-
-    setProviders();
-  }, []);
   return (
     <header className="bg-gray-50 drop-shadow-sm">
       <nav
@@ -139,7 +124,7 @@ const Navbar = () => {
             </Menu>
           ) : (
             <Link
-              href="/"
+              href="/login"
               className="rounded-md px-2 py-1.5 text-sm font-semibold text-gray-900 hover:bg-blue-600 active:bg-blue-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition duration-200 active:transition-none"
             >
               Log In
