@@ -2,7 +2,7 @@ import { BlueBtn } from "@components/ui/Buttons";
 import { Input } from "@components/form/input";
 import Image from "next/image";
 import Link from "next/link";
-import GoogleLogin from "@components/form/loginBtns";
+import { GoogleLogin } from "@components/form/sessionbtns";
 
 export default function Login() {
   return (
@@ -81,8 +81,9 @@ export default function Login() {
                   </span>
                 </div>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 grid grid-cols-2 gap-4">
                 <GoogleLogin />
+                <button className="bg-blue-50">apple</button>
               </div>
             </div>
           </div>

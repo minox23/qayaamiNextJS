@@ -1,24 +1,26 @@
-"use client";
-
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
+import { auth } from "@auth";
 
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { useEffect, useState } from "react";
+import { LogOut } from "@components/form/sessionbtns";
 
-const Navbar = () => {
-  const navigation: { name: string; href: string; id: number }[] = [
-    { name: "Advertise", href: "#", id: 1 },
-    { name: "Affiliate", href: "#", id: 2 },
-  ];
-  const accNavigation: { name: string; href: string; id: number }[] = [
-    { name: "Account settings", href: "/settings", id: 1 },
-    { name: "Profile", href: "#", id: 2 },
-    { name: "Support", href: "#", id: 3 },
-  ];
-  const [providers, setProviders] = useState(null);
-  const isUserLoggedIn: boolean = true;
+const navigation: { name: string; href: string; id: number }[] = [
+  { name: "Advertise", href: "#", id: 1 },
+  { name: "Affiliate", href: "#", id: 2 },
+];
+const accNavigation: { name: string; href: string; id: number }[] = [
+  { name: "Account settings", href: "/settings", id: 1 },
+  { name: "Profile", href: "#", id: 2 },
+  { name: "Support", href: "#", id: 3 },
+];
+
+const Navbar = async () => {
+  const session = await auth();
+  const userImage: string = session?.user?.image ?? "";
+  const userName: string = session?.user?.name ?? "";
+  const userEmail: string = session?.user?.email ?? "";
 
   return (
     <header className="bg-gray-50 drop-shadow-sm">
@@ -71,16 +73,16 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          {isUserLoggedIn ? (
+          {session ? (
             <Menu as="div" className="relative text-left">
               <div>
                 <MenuButton>
                   <Image
-                    src="/assets/images/black-girl-headshot.jpg"
-                    width={37}
-                    height={37}
-                    className="inline-block h-8 w-8 rounded-full hover:ring-4 ring-gray-300 cursor-pointer"
-                    alt="profile-picture"
+                    src={userImage}
+                    alt={userName}
+                    width={30}
+                    height={30}
+                    className="inline-block rounded-full hover:ring-4 ring-gray-300 cursor-pointer"
                   />
                 </MenuButton>
               </div>
@@ -90,9 +92,9 @@ const Navbar = () => {
               >
                 <div className="px-4 py-4">
                   <p className="text-xs mb-4">ACCOUNT</p>
-                  <p className="text-sm">Mokonya Njie</p>
+                  <p className="text-sm">{userName}</p>
                   <p className="truncate text-sm font-medium text-gray-900">
-                    mrQ@qayaami.com
+                    {userEmail && userEmail}
                   </p>
                 </div>
                 <div className="py-1">
@@ -109,16 +111,13 @@ const Navbar = () => {
                   ))}
                 </div>
                 <div className="py-1">
-                  <form action="#" method="POST">
-                    <MenuItem>
-                      <button
-                        type="submit"
-                        className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
-                      >
-                        Log Out
-                      </button>
-                    </MenuItem>
-                  </form>
+                  <MenuItem>
+                    <LogOut
+                      className={
+                        "block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 hover:bg-gray-100"
+                      }
+                    />
+                  </MenuItem>
                 </div>
               </MenuItems>
             </Menu>

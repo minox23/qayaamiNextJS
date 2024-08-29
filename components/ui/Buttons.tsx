@@ -2,12 +2,15 @@ interface BtnProps {
   disabled?: boolean;
   name: string;
   type: "submit" | "reset" | "button";
+  className?: string;
 }
 
 function GoogleBtn() {
   return (
     <button
-      type="submit" name="action" value="google"
+      type="submit"
+      name="action"
+      value="google"
       className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent"
     >
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -33,7 +36,7 @@ function GoogleBtn() {
   );
 }
 
-function BlueBtn (props: BtnProps): JSX.Element {
+function BlueBtn(props: BtnProps): JSX.Element {
   return (
     <button
       {...props}
@@ -42,5 +45,9 @@ function BlueBtn (props: BtnProps): JSX.Element {
       {props.name}
     </button>
   );
-};
-export { GoogleBtn, BlueBtn };
+}
+
+function PlainBtn(props: BtnProps) {
+  return <button {...props}>{props.name}</button>;
+}
+export { GoogleBtn, BlueBtn, PlainBtn };
