@@ -1,11 +1,12 @@
-import "@styles/globals.css";
+import "@public/globals.css";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Qayaami",
-  description: "digital marketing and advertising",
+  description: "advertising and Marketing agency",
 };
 
-const RootLayout: React.FC<any> = ({ children }): JSX.Element => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>

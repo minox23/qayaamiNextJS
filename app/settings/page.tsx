@@ -14,10 +14,11 @@ import {
 import {
   ArrowLeftCircleIcon,
   Bars3Icon,
-  CalendarIcon,
-  FolderIcon,
+  BuildingStorefrontIcon,
+  ChatBubbleOvalLeftIcon,
+  CreditCardIcon,
   HomeIcon,
-  UsersIcon,
+  UserIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import AccCenter from "./acccenter";
@@ -25,10 +26,10 @@ import { Subscription } from "./subscription";
 import { BusinessCenter } from "./businessCenter";
 
 const screens = [
-  { name: "Messages", icon: HomeIcon },
-  { name: "Business Center", icon: CalendarIcon },
-  { name: "My Subscription", icon: FolderIcon },
-  { name: "Account Center", icon: UsersIcon },
+  { name: "Messages", icon: ChatBubbleOvalLeftIcon },
+  { name: "Business Center", icon: BuildingStorefrontIcon },
+  { name: "My Subscription", icon: CreditCardIcon },
+  { name: "Account Center", icon: UserIcon },
 ];
 
 function classNames(...classes: string[]) {
