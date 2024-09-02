@@ -13,6 +13,16 @@
       "database": "qayaamiDB",
       "username": "root",
       "password": "K3428k5xF#"
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "Postgress localhost",
+      "database": "pgdb",
+      "username": "miko",
+      "password": "pass"
     }
   ]
 }
