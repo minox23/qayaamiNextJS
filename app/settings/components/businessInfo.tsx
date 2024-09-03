@@ -13,7 +13,7 @@ import {
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { useState } from "react";
-import { locationHierarchy } from "@database/data";
+import { locationHierarchy } from "@server/database/data";
 import { BlueBtn } from "@components/ui/Buttons";
 
 let regionNames = Object.keys(locationHierarchy);
