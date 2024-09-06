@@ -18,10 +18,10 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const { name, email, emailVerified, image } = await request.json();
+    const { name, email, emailVerified, image, id } = await request.json();
     const [user] = await db
       .insertInto("User")
-      .values({ name, email, emailVerified, image })
+      .values({email, emailVerified, image, name, id})
       .returningAll()
       .execute();
     return NextResponse.json(user, { status: 201 });
