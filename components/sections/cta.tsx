@@ -1,8 +1,8 @@
 export default function CTA(): JSX.Element {
     return (
-      <div className="bg-gray-950">
+      <div className="bg-gray-900">
         <div className="mx-auto max-w-7xl sm:px-6 sm:pt-5 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-950 px-6 py-24 text-center sm:rounded-3xl sm:px-16">
+          <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center sm:rounded-3xl sm:px-16">
             <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Transform your business today.
             </h2>

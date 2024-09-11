@@ -1,5 +1,6 @@
-import "@public/globals.css";
+import "@globals.css";
 import type { Metadata } from "next";
+import { inter } from "@components/ui/fonts";
 
 export const metadata: Metadata = {
   title: "Qayaami",
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body>
-        <main className="app">{children}</main>
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 };

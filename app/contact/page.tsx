@@ -1,4 +1,5 @@
 import { Input } from "@components/form/input";
+import Navbar from "@components/sections/navbar/Navbar";
 import { BlueBtn } from "@components/ui/Buttons";
 import {
   BuildingOffice2Icon,
@@ -6,10 +7,10 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 
-
 const Contact: React.FC = (): JSX.Element => {
   return (
     <div className="relative isolate bg-white">
+      <Navbar />
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-4 py-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">

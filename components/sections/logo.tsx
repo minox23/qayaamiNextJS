@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Logo() {
   return (
-    <div className="mx-auto mt-40 mb-10 w-96 px-8 md:px-0 flex">
+    <div className="mx-auto mb-12 w-80 sm:w-96 px-8 md:px-0 flex">
       <Image
         src="/assets/images/qmi-full-logo.png"
         alt="qayaami-logo"
@@ -12,3 +12,4 @@ export default function Logo() {
     </div>
   );
 }
+

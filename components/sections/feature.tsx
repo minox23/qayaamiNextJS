@@ -34,7 +34,7 @@ const features = [
 
 export default function Features(): JSX.Element {
   return (
-    <div className="bg-gray-50 py-16 mt-20 sm:py-20">
+    <div className="bg-gray-50 py-16 sm:py-20 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-blue-600">
